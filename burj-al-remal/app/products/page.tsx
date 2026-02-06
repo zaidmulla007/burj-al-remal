@@ -82,9 +82,9 @@ export default function Products() {
   );
 
   return (
-    <main className="min-h-screen bg-black pt-20">
+    <main className="min-h-screen bg-white pt-24">
       {/* Hero Section */}
-      <section className="relative py-20 overflow-hidden bg-gradient-to-br from-red-600/10 via-black to-black">
+      <section className="relative py-20 overflow-hidden bg-gradient-to-br from-red-50 via-white to-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -92,10 +92,10 @@ export default function Products() {
             transition={{ duration: 0.8 }}
             className="text-center"
           >
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-800 mb-6">
               Our <span className="text-red-600">Products</span>
             </h1>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
               Premium auto spare parts for all major brands
             </p>
 
@@ -113,7 +113,7 @@ export default function Products() {
                   placeholder="Search products or categories..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-12 pr-4 py-4 bg-zinc-900 border border-red-600/20 rounded-full text-white placeholder-gray-400 focus:outline-none focus:border-red-600 transition-all"
+                  className="w-full pl-12 pr-4 py-4 bg-white border border-gray-300 rounded-full text-gray-800 placeholder-gray-400 focus:outline-none focus:border-red-600 focus:ring-2 focus:ring-red-600/20 transition-all shadow-sm"
                 />
               </div>
             </motion.div>
@@ -122,7 +122,7 @@ export default function Products() {
       </section>
 
       {/* Product Categories */}
-      <section className="py-16 bg-black">
+      <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredCategories.map((category, index) => (
@@ -132,11 +132,11 @@ export default function Products() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ y: -5 }}
-                className="bg-zinc-900 rounded-2xl border border-red-600/20 hover:border-red-600 transition-all overflow-hidden"
+                className="bg-gray-50 rounded-2xl border border-gray-200 hover:border-red-600 hover:shadow-xl hover:shadow-red-600/10 transition-all overflow-hidden"
               >
                 {/* Category Header */}
                 <motion.div
-                  whileHover={{ backgroundColor: 'rgba(227, 30, 36, 0.1)' }}
+                  whileHover={{ backgroundColor: 'rgba(227, 30, 36, 0.05)' }}
                   onClick={() => setExpandedCategory(expandedCategory === category.name ? null : category.name)}
                   className="p-6 cursor-pointer flex items-center justify-between"
                 >
@@ -149,8 +149,8 @@ export default function Products() {
                       {category.icon}
                     </motion.div>
                     <div>
-                      <h3 className="text-2xl font-bold text-white">{category.name}</h3>
-                      <p className="text-gray-400 text-sm">{category.subcategories.length} subcategories</p>
+                      <h3 className="text-2xl font-bold text-gray-800">{category.name}</h3>
+                      <p className="text-gray-500 text-sm">{category.subcategories.length} subcategories</p>
                     </div>
                   </div>
                   <motion.div
@@ -169,7 +169,7 @@ export default function Products() {
                       animate={{ height: 'auto', opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
                       transition={{ duration: 0.3 }}
-                      className="border-t border-red-600/20 bg-black"
+                      className="border-t border-gray-200 bg-white"
                     >
                       <div className="p-4 space-y-2">
                         {category.subcategories.map((subcategory, subIndex) => (
@@ -178,8 +178,8 @@ export default function Products() {
                             initial={{ opacity: 0, x: -20 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ delay: subIndex * 0.05 }}
-                            whileHover={{ x: 5, backgroundColor: 'rgba(227, 30, 36, 0.1)' }}
-                            className="p-3 rounded-lg text-gray-300 hover:text-white transition-all cursor-pointer flex items-center space-x-2"
+                            whileHover={{ x: 5, backgroundColor: 'rgba(227, 30, 36, 0.05)' }}
+                            className="p-3 rounded-lg text-gray-600 hover:text-red-600 transition-all cursor-pointer flex items-center space-x-2"
                           >
                             <Package size={16} className="text-red-600" />
                             <span>{subcategory}</span>
@@ -199,14 +199,14 @@ export default function Products() {
               animate={{ opacity: 1 }}
               className="text-center py-20"
             >
-              <p className="text-gray-400 text-xl">No products found matching your search.</p>
+              <p className="text-gray-500 text-xl">No products found matching your search.</p>
             </motion.div>
           )}
         </div>
       </section>
 
       {/* All Categories List */}
-      <section className="py-16 bg-zinc-900">
+      <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -215,10 +215,10 @@ export default function Products() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-5xl font-bold text-gray-800 mb-4">
               Complete Product <span className="text-red-600">Catalog</span>
             </h2>
-            <p className="text-gray-400 text-lg">
+            <p className="text-gray-600 text-lg">
               Browse our extensive range of automotive parts
             </p>
           </motion.div>
@@ -231,18 +231,18 @@ export default function Products() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-black p-8 rounded-2xl border border-red-600/20"
+                className="bg-white p-8 rounded-2xl border border-gray-200 shadow-sm hover:shadow-lg transition-shadow"
               >
                 <div className="flex items-center space-x-3 mb-6">
                   <span className="text-4xl">{category.icon}</span>
-                  <h3 className="text-2xl font-bold text-white">{category.name}</h3>
+                  <h3 className="text-2xl font-bold text-gray-800">{category.name}</h3>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {category.subcategories.map((subcategory) => (
                     <motion.div
                       key={subcategory}
                       whileHover={{ x: 5, color: '#E31E24' }}
-                      className="text-gray-400 hover:text-red-600 transition-all cursor-pointer flex items-center space-x-2"
+                      className="text-gray-600 hover:text-red-600 transition-all cursor-pointer flex items-center space-x-2"
                     >
                       <div className="w-1.5 h-1.5 bg-red-600 rounded-full" />
                       <span className="text-sm">{subcategory}</span>
@@ -275,7 +275,7 @@ export default function Products() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-white text-red-600 px-8 py-4 rounded-full font-semibold text-lg"
+                className="bg-white text-red-600 px-8 py-4 rounded-full font-semibold text-lg shadow-lg"
               >
                 Contact Us Now
               </motion.button>

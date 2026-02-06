@@ -38,8 +38,8 @@ export default function Contact() {
     {
       icon: <Phone className="w-6 h-6" />,
       title: 'Phone',
-      details: ['0544313168', '0554956941'],
-      link: 'tel:0544313168',
+      details: ['+971 544313168', '+971 554956941'],
+      link: 'tel:+971544313168',
     },
     {
       icon: <Mail className="w-6 h-6" />,
@@ -62,9 +62,9 @@ export default function Contact() {
   ];
 
   return (
-    <main className="min-h-screen bg-black pt-20">
+    <main className="min-h-screen bg-white pt-24">
       {/* Hero Section */}
-      <section className="relative py-20 overflow-hidden bg-gradient-to-br from-red-600/10 via-black to-black">
+      <section className="relative py-20 overflow-hidden bg-gradient-to-br from-red-50 via-white to-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -72,10 +72,10 @@ export default function Contact() {
             transition={{ duration: 0.8 }}
             className="text-center"
           >
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-800 mb-6">
               Get in <span className="text-red-600">Touch</span>
             </h1>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Have a question or need assistance? We're here to help!
             </p>
           </motion.div>
@@ -83,7 +83,7 @@ export default function Contact() {
       </section>
 
       {/* Contact Info Cards */}
-      <section className="py-16 bg-black">
+      <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {contactInfo.map((info, index) => (
@@ -94,7 +94,7 @@ export default function Contact() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ y: -10, scale: 1.02 }}
-                className="bg-zinc-900 p-8 rounded-2xl border border-red-600/20 hover:border-red-600 transition-all text-center cursor-pointer"
+                className="bg-gray-50 p-8 rounded-2xl border border-gray-200 hover:border-red-600 hover:shadow-xl hover:shadow-red-600/10 transition-all text-center cursor-pointer"
               >
                 <motion.div
                   whileHover={{ scale: 1.2, rotate: 360 }}
@@ -103,9 +103,9 @@ export default function Contact() {
                 >
                   {info.icon}
                 </motion.div>
-                <h3 className="text-xl font-semibold text-white mb-3">{info.title}</h3>
+                <h3 className="text-xl font-semibold text-gray-800 mb-3">{info.title}</h3>
                 {info.details.map((detail, idx) => (
-                  <p key={idx} className="text-gray-400 text-sm">
+                  <p key={idx} className="text-gray-600 text-sm">
                     {detail}
                   </p>
                 ))}
@@ -116,7 +116,7 @@ export default function Contact() {
       </section>
 
       {/* Contact Form & Map */}
-      <section className="py-16 bg-zinc-900">
+      <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Form */}
@@ -126,16 +126,16 @@ export default function Contact() {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
                 Send us a <span className="text-red-600">Message</span>
               </h2>
-              <p className="text-gray-400 mb-8">
+              <p className="text-gray-600 mb-8">
                 Fill out the form below and our team will get back to you as soon as possible.
               </p>
 
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-white mb-2 font-medium">
+                  <label htmlFor="name" className="block text-gray-800 mb-2 font-medium">
                     Full Name *
                   </label>
                   <input
@@ -145,14 +145,14 @@ export default function Contact() {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-black border border-red-600/20 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-red-600 transition-all"
+                    className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-800 placeholder-gray-400 focus:outline-none focus:border-red-600 focus:ring-2 focus:ring-red-600/20 transition-all"
                     placeholder="John Doe"
                   />
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="email" className="block text-white mb-2 font-medium">
+                    <label htmlFor="email" className="block text-gray-800 mb-2 font-medium">
                       Email *
                     </label>
                     <input
@@ -162,13 +162,13 @@ export default function Contact() {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 bg-black border border-red-600/20 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-red-600 transition-all"
+                      className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-800 placeholder-gray-400 focus:outline-none focus:border-red-600 focus:ring-2 focus:ring-red-600/20 transition-all"
                       placeholder="john@example.com"
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="phone" className="block text-white mb-2 font-medium">
+                    <label htmlFor="phone" className="block text-gray-800 mb-2 font-medium">
                       Phone
                     </label>
                     <input
@@ -177,14 +177,14 @@ export default function Contact() {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 bg-black border border-red-600/20 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-red-600 transition-all"
+                      className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-800 placeholder-gray-400 focus:outline-none focus:border-red-600 focus:ring-2 focus:ring-red-600/20 transition-all"
                       placeholder="+971 XX XXX XXXX"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label htmlFor="subject" className="block text-white mb-2 font-medium">
+                  <label htmlFor="subject" className="block text-gray-800 mb-2 font-medium">
                     Subject *
                   </label>
                   <select
@@ -193,7 +193,7 @@ export default function Contact() {
                     value={formData.subject}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-black border border-red-600/20 rounded-lg text-white focus:outline-none focus:border-red-600 transition-all"
+                    className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-800 focus:outline-none focus:border-red-600 focus:ring-2 focus:ring-red-600/20 transition-all"
                   >
                     <option value="">Select a subject</option>
                     <option value="general">General Inquiry</option>
@@ -205,7 +205,7 @@ export default function Contact() {
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-white mb-2 font-medium">
+                  <label htmlFor="message" className="block text-gray-800 mb-2 font-medium">
                     Message *
                   </label>
                   <textarea
@@ -215,7 +215,7 @@ export default function Contact() {
                     onChange={handleChange}
                     required
                     rows={6}
-                    className="w-full px-4 py-3 bg-black border border-red-600/20 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-red-600 transition-all resize-none"
+                    className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-800 placeholder-gray-400 focus:outline-none focus:border-red-600 focus:ring-2 focus:ring-red-600/20 transition-all resize-none"
                     placeholder="Tell us how we can help you..."
                   />
                 </div>
@@ -225,7 +225,7 @@ export default function Contact() {
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   disabled={isSubmitting}
-                  className="w-full bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-full font-semibold text-lg flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+                  className="w-full bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-full font-semibold text-lg flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed transition-all shadow-lg shadow-red-600/30"
                 >
                   {isSubmitting ? (
                     <>
@@ -248,7 +248,7 @@ export default function Contact() {
                   <motion.div
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="bg-green-600/20 border border-green-600 text-green-400 px-4 py-3 rounded-lg text-center"
+                    className="bg-green-50 border border-green-500 text-green-700 px-4 py-3 rounded-lg text-center"
                   >
                     Thank you! Your message has been sent successfully.
                   </motion.div>
@@ -265,7 +265,7 @@ export default function Contact() {
               className="space-y-8"
             >
               {/* Map Placeholder */}
-              <div className="bg-black border border-red-600/20 rounded-2xl overflow-hidden h-[400px]">
+              <div className="bg-white border border-gray-200 rounded-2xl overflow-hidden h-[400px] shadow-sm">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3605.681572937977!2d55.64419931501114!3d25.32755838383841!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5b5d7d5d5d5d%3A0x5d5d5d5d5d5d5d5d!2sAl%20Sajaa%20Industrial%20Area%2C%20Sharjah%2C%20UAE!5e0!3m2!1sen!2s!4v1234567890123!5m2!1sen!2s"
                   width="100%"
@@ -274,13 +274,13 @@ export default function Contact() {
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  className="grayscale hover:grayscale-0 transition-all duration-500"
+                  className="hover:opacity-90 transition-opacity"
                 />
               </div>
 
               {/* Additional Info */}
-              <div className="bg-black border border-red-600/20 rounded-2xl p-8">
-                <h3 className="text-2xl font-bold text-white mb-6">Why Contact Us?</h3>
+              <div className="bg-white border border-gray-200 rounded-2xl p-8 shadow-sm">
+                <h3 className="text-2xl font-bold text-gray-800 mb-6">Why Contact Us?</h3>
                 <ul className="space-y-4">
                   {[
                     'Expert product recommendations',
@@ -295,7 +295,7 @@ export default function Contact() {
                       whileInView={{ opacity: 1, x: 0 }}
                       transition={{ delay: index * 0.1 }}
                       viewport={{ once: true }}
-                      className="flex items-center space-x-3 text-gray-300"
+                      className="flex items-center space-x-3 text-gray-600"
                     >
                       <div className="w-2 h-2 bg-red-600 rounded-full" />
                       <span>{item}</span>
@@ -307,7 +307,7 @@ export default function Contact() {
               {/* Grand Opening Banner */}
               <motion.div
                 whileHover={{ scale: 1.02 }}
-                className="bg-gradient-to-r from-red-600 to-red-700 rounded-2xl p-8 text-white text-center"
+                className="bg-gradient-to-r from-red-600 to-red-700 rounded-2xl p-8 text-white text-center shadow-xl shadow-red-600/20"
               >
                 <h3 className="text-2xl font-bold mb-2">Grand Opening!</h3>
                 <p className="text-lg mb-2">Sunday, 01 February 2026</p>
@@ -320,7 +320,7 @@ export default function Contact() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-16 bg-black">
+      <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -329,7 +329,7 @@ export default function Contact() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
               Frequently Asked <span className="text-red-600">Questions</span>
             </h2>
           </motion.div>
@@ -360,10 +360,10 @@ export default function Contact() {
                 transition={{ delay: index * 0.1 }}
                 viewport={{ once: true }}
                 whileHover={{ scale: 1.01 }}
-                className="bg-zinc-900 border border-red-600/20 rounded-xl p-6 hover:border-red-600 transition-all"
+                className="bg-gray-50 border border-gray-200 rounded-xl p-6 hover:border-red-600 hover:shadow-lg transition-all"
               >
-                <h3 className="text-lg font-semibold text-white mb-2">{faq.q}</h3>
-                <p className="text-gray-400">{faq.a}</p>
+                <h3 className="text-lg font-semibold text-gray-800 mb-2">{faq.q}</h3>
+                <p className="text-gray-600">{faq.a}</p>
               </motion.div>
             ))}
           </div>

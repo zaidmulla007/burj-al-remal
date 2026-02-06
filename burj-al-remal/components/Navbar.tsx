@@ -79,7 +79,7 @@ const Navbar = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5, ease: 'easeOut' }}
-      className="fixed top-0 left-0 right-0 z-50 bg-black/95 backdrop-blur-md border-b border-red-600/20"
+      className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
@@ -91,15 +91,12 @@ const Navbar = () => {
               className="flex items-center space-x-3"
             >
               <Image
-                src="/logo.png"
+                src="/new-logo.png"
                 alt="Burj Al Remal Logo"
-                width={60}
-                height={60}
-                className="object-contain"
+                width={240}
+                height={80}
+                className="object-contain h-20 w-auto"
               />
-              <div className="text-lg font-bold hidden lg:block">
-                <span className="text-red-600">BURJ AL REMAL</span>
-              </div>
             </motion.div>
           </Link>
 
@@ -108,7 +105,7 @@ const Navbar = () => {
             <Link href="/">
               <motion.span
                 whileHover={{ scale: 1.05, color: '#E31E24' }}
-                className="text-white hover:text-red-600 transition-colors cursor-pointer font-medium"
+                className="text-gray-700 hover:text-red-600 transition-colors cursor-pointer font-medium"
               >
                 Home
               </motion.span>
@@ -116,7 +113,7 @@ const Navbar = () => {
             <Link href="/about">
               <motion.span
                 whileHover={{ scale: 1.05, color: '#E31E24' }}
-                className="text-white hover:text-red-600 transition-colors cursor-pointer font-medium"
+                className="text-gray-700 hover:text-red-600 transition-colors cursor-pointer font-medium"
               >
                 About
               </motion.span>
@@ -130,7 +127,7 @@ const Navbar = () => {
             >
               <motion.button
                 whileHover={{ scale: 1.05 }}
-                className="text-white hover:text-red-600 transition-colors font-medium flex items-center space-x-1"
+                className="text-gray-700 hover:text-red-600 transition-colors font-medium flex items-center space-x-1"
               >
                 <span>Products</span>
                 <motion.div
@@ -148,7 +145,7 @@ const Navbar = () => {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
                     transition={{ duration: 0.2 }}
-                    className="absolute top-full mt-2 w-56 bg-zinc-900 rounded-lg shadow-xl border border-red-600/20 overflow-visible"
+                    className="absolute top-full mt-2 w-56 bg-white rounded-lg shadow-xl border border-gray-200 overflow-visible"
                   >
                     {productCategories.map((category, index) => (
                       <div
@@ -162,7 +159,7 @@ const Navbar = () => {
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ delay: index * 0.05 }}
                             whileHover={{ backgroundColor: '#E31E24', x: 5 }}
-                            className="px-4 py-3 text-white hover:text-white transition-all cursor-pointer flex items-center justify-between"
+                            className="px-4 py-3 text-gray-700 hover:text-white transition-all cursor-pointer flex items-center justify-between"
                           >
                             <span>{category.name}</span>
                             <ChevronDown size={14} className="-rotate-90" />
@@ -177,7 +174,7 @@ const Navbar = () => {
                               animate={{ opacity: 1, x: 0 }}
                               exit={{ opacity: 0, x: -10 }}
                               transition={{ duration: 0.2 }}
-                              className="absolute left-full top-0 -ml-1 w-56 bg-zinc-800 rounded-lg shadow-xl border border-red-600/20 overflow-hidden z-50"
+                              className="absolute left-full top-0 -ml-1 w-56 bg-white rounded-lg shadow-xl border border-gray-200 overflow-hidden z-50"
                               onMouseEnter={() => setHoveredCategory(category.name)}
                               onMouseLeave={() => setHoveredCategory(null)}
                             >
@@ -188,7 +185,7 @@ const Navbar = () => {
                                   animate={{ opacity: 1, x: 0 }}
                                   transition={{ delay: subIndex * 0.03 }}
                                   whileHover={{ backgroundColor: '#c91a1f', x: 5 }}
-                                  className="px-4 py-2 text-white text-sm hover:text-white transition-all cursor-pointer"
+                                  className="px-4 py-2 text-gray-600 text-sm hover:text-white transition-all cursor-pointer"
                                 >
                                   {subcategory}
                                 </motion.div>
@@ -206,7 +203,7 @@ const Navbar = () => {
             <Link href="/contact">
               <motion.span
                 whileHover={{ scale: 1.05, color: '#E31E24' }}
-                className="text-white hover:text-red-600 transition-colors cursor-pointer font-medium"
+                className="text-gray-700 hover:text-red-600 transition-colors cursor-pointer font-medium"
               >
                 Contact Us
               </motion.span>
@@ -216,7 +213,7 @@ const Navbar = () => {
               <motion.button
                 whileHover={{ scale: 1.05, backgroundColor: '#c91a1f' }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-red-600 text-white px-6 py-2 rounded-full font-semibold"
+                className="bg-red-600 text-white px-6 py-2 rounded-full font-semibold shadow-lg shadow-red-600/30"
               >
                 Get Quote
               </motion.button>
@@ -228,7 +225,7 @@ const Navbar = () => {
             <motion.a
               whileHover={{ scale: 1.2, color: '#E31E24' }}
               href="#"
-              className="text-gray-400 hover:text-red-600 transition-colors"
+              className="text-gray-500 hover:text-red-600 transition-colors"
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
@@ -237,7 +234,7 @@ const Navbar = () => {
             <motion.a
               whileHover={{ scale: 1.2, color: '#E31E24' }}
               href="#"
-              className="text-gray-400 hover:text-red-600 transition-colors"
+              className="text-gray-500 hover:text-red-600 transition-colors"
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
@@ -248,7 +245,7 @@ const Navbar = () => {
             <motion.a
               whileHover={{ scale: 1.2, color: '#E31E24' }}
               href="#"
-              className="text-gray-400 hover:text-red-600 transition-colors"
+              className="text-gray-500 hover:text-red-600 transition-colors"
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
@@ -259,7 +256,7 @@ const Navbar = () => {
             <motion.a
               whileHover={{ scale: 1.2, color: '#E31E24' }}
               href="#"
-              className="text-gray-400 hover:text-red-600 transition-colors"
+              className="text-gray-500 hover:text-red-600 transition-colors"
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"></path>
@@ -269,7 +266,7 @@ const Navbar = () => {
             <motion.a
               whileHover={{ scale: 1.2 }}
               href="#"
-              className="text-gray-400 hover:text-red-600 transition-colors"
+              className="text-gray-500 hover:text-red-600 transition-colors"
               title="Follow us on TikTok"
               aria-label="TikTok"
             >
@@ -283,7 +280,7 @@ const Navbar = () => {
           <motion.button
             whileTap={{ scale: 0.9 }}
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-white"
+            className="md:hidden text-gray-700"
           >
             {isOpen ? <X size={28} /> : <Menu size={28} />}
           </motion.button>
@@ -298,13 +295,13 @@ const Navbar = () => {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden bg-zinc-900 border-t border-red-600/20"
+            className="md:hidden bg-white border-t border-gray-200"
           >
             <div className="px-4 py-4 space-y-4">
               <Link href="/" onClick={() => setIsOpen(false)}>
                 <motion.div
                   whileHover={{ x: 5, color: '#E31E24' }}
-                  className="text-white py-2 font-medium"
+                  className="text-gray-700 py-2 font-medium"
                 >
                   Home
                 </motion.div>
@@ -312,7 +309,7 @@ const Navbar = () => {
               <Link href="/about" onClick={() => setIsOpen(false)}>
                 <motion.div
                   whileHover={{ x: 5, color: '#E31E24' }}
-                  className="text-white py-2 font-medium"
+                  className="text-gray-700 py-2 font-medium"
                 >
                   About
                 </motion.div>
@@ -322,7 +319,7 @@ const Navbar = () => {
                 <motion.button
                   whileHover={{ x: 5 }}
                   onClick={() => setProductsOpen(!productsOpen)}
-                  className="text-white py-2 font-medium flex items-center space-x-2 w-full"
+                  className="text-gray-700 py-2 font-medium flex items-center space-x-2 w-full"
                 >
                   <span>Products</span>
                   <motion.div
@@ -349,7 +346,7 @@ const Navbar = () => {
                         >
                           <motion.div
                             whileHover={{ x: 5, color: '#E31E24' }}
-                            className="text-gray-300 py-2 text-sm"
+                            className="text-gray-500 py-2 text-sm"
                           >
                             {category.name}
                           </motion.div>
@@ -363,7 +360,7 @@ const Navbar = () => {
               <Link href="/contact" onClick={() => setIsOpen(false)}>
                 <motion.div
                   whileHover={{ x: 5, color: '#E31E24' }}
-                  className="text-white py-2 font-medium"
+                  className="text-gray-700 py-2 font-medium"
                 >
                   Contact Us
                 </motion.div>
@@ -373,18 +370,18 @@ const Navbar = () => {
                 <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="bg-red-600 text-white px-6 py-3 rounded-full font-semibold w-full"
+                  className="bg-red-600 text-white px-6 py-3 rounded-full font-semibold w-full shadow-lg shadow-red-600/30"
                 >
                   Get Quote
                 </motion.button>
               </Link>
 
               {/* Social Media Icons - Mobile */}
-              <div className="flex items-center justify-center space-x-6 pt-4 border-t border-red-600/20">
+              <div className="flex items-center justify-center space-x-6 pt-4 border-t border-gray-200">
                 <motion.a
                   whileHover={{ scale: 1.2, color: '#E31E24' }}
                   href="#"
-                  className="text-gray-400 hover:text-red-600 transition-colors"
+                  className="text-gray-500 hover:text-red-600 transition-colors"
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
@@ -393,7 +390,7 @@ const Navbar = () => {
                 <motion.a
                   whileHover={{ scale: 1.2, color: '#E31E24' }}
                   href="#"
-                  className="text-gray-400 hover:text-red-600 transition-colors"
+                  className="text-gray-500 hover:text-red-600 transition-colors"
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
@@ -404,7 +401,7 @@ const Navbar = () => {
                 <motion.a
                   whileHover={{ scale: 1.2, color: '#E31E24' }}
                   href="#"
-                  className="text-gray-400 hover:text-red-600 transition-colors"
+                  className="text-gray-500 hover:text-red-600 transition-colors"
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
@@ -415,7 +412,7 @@ const Navbar = () => {
                 <motion.a
                   whileHover={{ scale: 1.2, color: '#E31E24' }}
                   href="#"
-                  className="text-gray-400 hover:text-red-600 transition-colors"
+                  className="text-gray-500 hover:text-red-600 transition-colors"
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"></path>
@@ -425,7 +422,7 @@ const Navbar = () => {
                 <motion.a
                   whileHover={{ scale: 1.2 }}
                   href="#"
-                  className="text-gray-400 hover:text-red-600 transition-colors"
+                  className="text-gray-500 hover:text-red-600 transition-colors"
                   title="Follow us on TikTok"
                   aria-label="TikTok"
                 >

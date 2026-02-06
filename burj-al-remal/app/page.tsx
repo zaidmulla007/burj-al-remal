@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowRight, Shield, Wrench, Clock, Award, TrendingUp, Users } from 'lucide-react';
+import { ArrowRight, Shield, Wrench, Clock, Award } from 'lucide-react';
 import Link from 'next/link';
 import BrandLogos from '@/components/BrandLogos';
 
@@ -37,18 +37,18 @@ export default function Home() {
   ];
 
   return (
-    <main className="min-h-screen bg-black">
+    <main className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24">
         {/* Animated Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-black via-zinc-900 to-black">
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-gray-100">
           <motion.div
             className="absolute inset-0"
             animate={{
               background: [
-                'radial-gradient(circle at 0% 0%, rgba(227, 30, 36, 0.1) 0%, transparent 50%)',
-                'radial-gradient(circle at 100% 100%, rgba(227, 30, 36, 0.1) 0%, transparent 50%)',
-                'radial-gradient(circle at 0% 0%, rgba(227, 30, 36, 0.1) 0%, transparent 50%)',
+                'radial-gradient(circle at 0% 0%, rgba(227, 30, 36, 0.05) 0%, transparent 50%)',
+                'radial-gradient(circle at 100% 100%, rgba(227, 30, 36, 0.05) 0%, transparent 50%)',
+                'radial-gradient(circle at 0% 0%, rgba(227, 30, 36, 0.05) 0%, transparent 50%)',
               ],
             }}
             transition={{ duration: 10, repeat: Infinity, ease: 'linear' }}
@@ -63,7 +63,7 @@ export default function Home() {
               transition={{ duration: 0.8 }}
             >
               <motion.h1
-                className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-6"
+                className="text-4xl sm:text-5xl md:text-7xl font-bold text-gray-800 mb-6"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
@@ -75,7 +75,7 @@ export default function Home() {
             </motion.div>
 
             <motion.p
-              className="text-lg sm:text-xl text-gray-300 mb-8 max-w-3xl mx-auto"
+              className="text-lg sm:text-xl text-gray-600 mb-8 max-w-3xl mx-auto"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
@@ -93,7 +93,7 @@ export default function Home() {
                 <motion.button
                   whileHover={{ scale: 1.05, backgroundColor: '#c91a1f' }}
                   whileTap={{ scale: 0.95 }}
-                  className="bg-red-600 text-white px-8 py-4 rounded-full font-semibold text-lg flex items-center space-x-2 group"
+                  className="bg-red-600 text-white px-8 py-4 rounded-full font-semibold text-lg flex items-center space-x-2 group shadow-lg shadow-red-600/30"
                 >
                   <span>Explore Products</span>
                   <motion.div
@@ -108,7 +108,7 @@ export default function Home() {
                 <motion.button
                   whileHover={{ scale: 1.05, borderColor: '#E31E24', color: '#E31E24' }}
                   whileTap={{ scale: 0.95 }}
-                  className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg"
+                  className="border-2 border-gray-400 text-gray-700 px-8 py-4 rounded-full font-semibold text-lg hover:border-red-600 hover:text-red-600 transition-colors"
                 >
                   Contact Us
                 </motion.button>
@@ -118,7 +118,7 @@ export default function Home() {
 
           {/* Floating Elements */}
           <motion.div
-            className="absolute top-20 left-10 w-20 h-20 bg-red-600/10 rounded-full blur-xl"
+            className="absolute top-20 left-10 w-20 h-20 bg-red-600/5 rounded-full blur-xl"
             animate={{
               y: [0, 30, 0],
               scale: [1, 1.2, 1],
@@ -126,7 +126,7 @@ export default function Home() {
             transition={{ duration: 4, repeat: Infinity }}
           />
           <motion.div
-            className="absolute bottom-20 right-10 w-32 h-32 bg-red-600/10 rounded-full blur-xl"
+            className="absolute bottom-20 right-10 w-32 h-32 bg-gray-400/10 rounded-full blur-xl"
             animate={{
               y: [0, -30, 0],
               scale: [1, 1.3, 1],
@@ -152,7 +152,7 @@ export default function Home() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-gradient-to-b from-black to-zinc-900">
+      <section className="py-16 bg-gradient-to-b from-white to-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
@@ -170,7 +170,7 @@ export default function Home() {
                 >
                   {stat.number}
                 </motion.div>
-                <div className="text-gray-400 text-sm md:text-base">{stat.label}</div>
+                <div className="text-gray-600 text-sm md:text-base">{stat.label}</div>
               </motion.div>
             ))}
           </div>
@@ -178,7 +178,7 @@ export default function Home() {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 bg-zinc-900">
+      <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -187,10 +187,10 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-5xl font-bold text-gray-800 mb-4">
               Why Choose <span className="text-red-600">Burj Al Remal</span>
             </h2>
-            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
               We provide the best quality auto spare parts with exceptional service
             </p>
           </motion.div>
@@ -204,7 +204,7 @@ export default function Home() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -10, scale: 1.02 }}
-                className="bg-black p-8 rounded-2xl border border-red-600/20 hover:border-red-600 transition-all duration-300"
+                className="bg-white p-8 rounded-2xl border border-gray-200 hover:border-red-600 hover:shadow-xl hover:shadow-red-600/10 transition-all duration-300"
               >
                 <motion.div
                   whileHover={{ rotate: 360 }}
@@ -213,8 +213,8 @@ export default function Home() {
                 >
                   {feature.icon}
                 </motion.div>
-                <h3 className="text-xl font-semibold text-white mb-3">{feature.title}</h3>
-                <p className="text-gray-400">{feature.description}</p>
+                <h3 className="text-xl font-semibold text-gray-800 mb-3">{feature.title}</h3>
+                <p className="text-gray-600">{feature.description}</p>
               </motion.div>
             ))}
           </div>
@@ -257,7 +257,7 @@ export default function Home() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-white text-red-600 px-8 py-4 rounded-full font-semibold text-lg inline-flex items-center space-x-2"
+                className="bg-white text-red-600 px-8 py-4 rounded-full font-semibold text-lg inline-flex items-center space-x-2 shadow-lg"
               >
                 <span>Get in Touch</span>
                 <ArrowRight className="w-5 h-5" />

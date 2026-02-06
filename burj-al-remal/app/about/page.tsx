@@ -1,7 +1,8 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Target, Eye, Award, Users, Wrench, Shield, Clock, ThumbsUp } from 'lucide-react';
+import { Target, Eye, Shield, Users, Clock, ThumbsUp } from 'lucide-react';
+import Link from 'next/link';
 
 export default function About() {
   const values = [
@@ -36,10 +37,10 @@ export default function About() {
   ];
 
   return (
-    <main className="min-h-screen bg-black pt-20">
+    <main className="min-h-screen bg-white pt-24">
       {/* Hero Section */}
       <section className="relative py-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-red-600/10 via-black to-black" />
+        <div className="absolute inset-0 bg-gradient-to-br from-red-50 via-white to-gray-50" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -48,10 +49,10 @@ export default function About() {
             transition={{ duration: 0.8 }}
             className="text-center"
           >
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-800 mb-6">
               About <span className="text-red-600">Burj Al Remal</span>
             </h1>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Your trusted partner in automotive excellence since 2015
             </p>
           </motion.div>
@@ -59,7 +60,7 @@ export default function About() {
       </section>
 
       {/* Our Story */}
-      <section className="py-20 bg-zinc-900">
+      <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -68,10 +69,10 @@ export default function About() {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
                 Our <span className="text-red-600">Story</span>
               </h2>
-              <div className="space-y-4 text-gray-300">
+              <div className="space-y-4 text-gray-600">
                 <p>
                   Burj Al Remal Auto Spare Parts TR LLC was established with a clear vision: to provide the UAE automotive industry with the highest quality spare parts and exceptional service.
                 </p>
@@ -97,28 +98,28 @@ export default function About() {
               <div className="grid grid-cols-2 gap-4">
                 <motion.div
                   whileHover={{ scale: 1.05 }}
-                  className="bg-red-600 p-8 rounded-2xl text-center"
+                  className="bg-red-600 p-8 rounded-2xl text-center shadow-lg shadow-red-600/20"
                 >
                   <div className="text-4xl font-bold text-white mb-2">10+</div>
                   <div className="text-white/90">Years Experience</div>
                 </motion.div>
                 <motion.div
                   whileHover={{ scale: 1.05 }}
-                  className="bg-black border border-red-600/20 p-8 rounded-2xl text-center"
+                  className="bg-white border border-gray-200 p-8 rounded-2xl text-center shadow-lg"
                 >
                   <div className="text-4xl font-bold text-red-600 mb-2">5000+</div>
-                  <div className="text-gray-400">Products</div>
+                  <div className="text-gray-600">Products</div>
                 </motion.div>
                 <motion.div
                   whileHover={{ scale: 1.05 }}
-                  className="bg-black border border-red-600/20 p-8 rounded-2xl text-center"
+                  className="bg-white border border-gray-200 p-8 rounded-2xl text-center shadow-lg"
                 >
                   <div className="text-4xl font-bold text-red-600 mb-2">500+</div>
-                  <div className="text-gray-400">Happy Clients</div>
+                  <div className="text-gray-600">Happy Clients</div>
                 </motion.div>
                 <motion.div
                   whileHover={{ scale: 1.05 }}
-                  className="bg-red-600 p-8 rounded-2xl text-center"
+                  className="bg-red-600 p-8 rounded-2xl text-center shadow-lg shadow-red-600/20"
                 >
                   <div className="text-4xl font-bold text-white mb-2">50+</div>
                   <div className="text-white/90">Brands</div>
@@ -130,7 +131,7 @@ export default function About() {
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-20 bg-black">
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <motion.div
@@ -139,7 +140,7 @@ export default function About() {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
               whileHover={{ y: -5 }}
-              className="bg-gradient-to-br from-red-600 to-red-700 p-10 rounded-2xl"
+              className="bg-gradient-to-br from-red-600 to-red-700 p-10 rounded-2xl shadow-xl shadow-red-600/20"
             >
               <motion.div
                 whileHover={{ rotate: 360 }}
@@ -160,7 +161,7 @@ export default function About() {
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
               whileHover={{ y: -5 }}
-              className="bg-zinc-900 border border-red-600/20 p-10 rounded-2xl"
+              className="bg-gray-50 border border-gray-200 p-10 rounded-2xl shadow-lg"
             >
               <motion.div
                 whileHover={{ rotate: 360 }}
@@ -169,8 +170,8 @@ export default function About() {
               >
                 <Eye className="w-16 h-16" />
               </motion.div>
-              <h3 className="text-3xl font-bold text-white mb-4">Our Vision</h3>
-              <p className="text-gray-300 text-lg">
+              <h3 className="text-3xl font-bold text-gray-800 mb-4">Our Vision</h3>
+              <p className="text-gray-600 text-lg">
                 To become the leading automotive spare parts supplier in the UAE, recognized for our commitment to quality, innovation, and customer satisfaction, while continuously expanding our product range and services to meet evolving market needs.
               </p>
             </motion.div>
@@ -179,7 +180,7 @@ export default function About() {
       </section>
 
       {/* Values */}
-      <section className="py-20 bg-zinc-900">
+      <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -188,10 +189,10 @@ export default function About() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-5xl font-bold text-gray-800 mb-4">
               Our <span className="text-red-600">Core Values</span>
             </h2>
-            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
               The principles that guide everything we do
             </p>
           </motion.div>
@@ -205,7 +206,7 @@ export default function About() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -10, scale: 1.02 }}
-                className="bg-black p-8 rounded-2xl border border-red-600/20 hover:border-red-600 transition-all duration-300 text-center"
+                className="bg-white p-8 rounded-2xl border border-gray-200 hover:border-red-600 hover:shadow-xl hover:shadow-red-600/10 transition-all duration-300 text-center"
               >
                 <motion.div
                   whileHover={{ scale: 1.2, rotate: 360 }}
@@ -214,8 +215,8 @@ export default function About() {
                 >
                   {value.icon}
                 </motion.div>
-                <h3 className="text-xl font-semibold text-white mb-3">{value.title}</h3>
-                <p className="text-gray-400">{value.description}</p>
+                <h3 className="text-xl font-semibold text-gray-800 mb-3">{value.title}</h3>
+                <p className="text-gray-600">{value.description}</p>
               </motion.div>
             ))}
           </div>
@@ -223,7 +224,7 @@ export default function About() {
       </section>
 
       {/* Timeline */}
-      <section className="py-20 bg-black">
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -232,17 +233,17 @@ export default function About() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-5xl font-bold text-gray-800 mb-4">
               Our <span className="text-red-600">Journey</span>
             </h2>
-            <p className="text-gray-400 text-lg">
+            <p className="text-gray-600 text-lg">
               Milestones that shaped our success
             </p>
           </motion.div>
 
           <div className="relative">
             {/* Timeline Line */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-red-600/20 hidden md:block" />
+            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-red-200 hidden md:block" />
 
             <div className="space-y-12">
               {timeline.map((item, index) => (
@@ -259,18 +260,18 @@ export default function About() {
                   <div className={`flex-1 ${index % 2 === 0 ? 'md:text-right' : 'md:text-left'} text-center`}>
                     <motion.div
                       whileHover={{ scale: 1.05 }}
-                      className="bg-zinc-900 p-6 rounded-xl border border-red-600/20 hover:border-red-600 transition-all"
+                      className="bg-gray-50 p-6 rounded-xl border border-gray-200 hover:border-red-600 hover:shadow-lg transition-all"
                     >
                       <div className="text-2xl font-bold text-red-600 mb-2">{item.year}</div>
-                      <h3 className="text-xl font-semibold text-white mb-2">{item.event}</h3>
-                      <p className="text-gray-400">{item.description}</p>
+                      <h3 className="text-xl font-semibold text-gray-800 mb-2">{item.event}</h3>
+                      <p className="text-gray-600">{item.description}</p>
                     </motion.div>
                   </div>
 
                   {/* Center Dot */}
                   <motion.div
                     whileHover={{ scale: 1.5 }}
-                    className="w-4 h-4 bg-red-600 rounded-full border-4 border-black hidden md:block"
+                    className="w-4 h-4 bg-red-600 rounded-full border-4 border-white shadow-lg hidden md:block"
                   />
 
                   <div className="flex-1 hidden md:block" />
@@ -297,13 +298,15 @@ export default function About() {
             <p className="text-xl mb-8 text-white/90 max-w-2xl mx-auto">
               Join hundreds of satisfied customers who trust us for their automotive needs
             </p>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-white text-red-600 px-8 py-4 rounded-full font-semibold text-lg"
-            >
-              Contact Us Today
-            </motion.button>
+            <Link href="/contact">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-white text-red-600 px-8 py-4 rounded-full font-semibold text-lg shadow-lg"
+              >
+                Contact Us Today
+              </motion.button>
+            </Link>
           </motion.div>
         </div>
       </section>
